@@ -1,0 +1,590 @@
+:root {
+    --color-primario: #76520e;
+    --color-secundario: #fff;
+  }
+* {
+    margin: 0;
+}
+.fixed {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("./img/luli-bg-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.titulo_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0.7;
+    font-family: 'Dancing Script', cursive;
+
+}
+.titulo_container  h1 {
+    color: var(--color-secundario);
+    font-size: 12rem;
+   
+}
+.titulo_container  p{
+    color: var(--color-secundario);
+    font-size: 3rem;
+}
+@keyframes swipe {
+    0% {
+        top: 80%
+    }
+    100% {
+        top: 90%;
+        opacity:0;
+    }
+}
+.arrow-presentacion {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-secundario);
+    opacity: 0.7;
+    animation: swipe 2s ease-in-out infinite;
+}
+
+
+
+/*------------------------------------ Counter------------------------------------- */
+.counter {
+    width: 100%;
+    background: var( --color-primario);
+    font-size: 25px;
+    color: var(--color-secundario);
+    font-family: 'Montserrat', sans-serif;
+}
+.counter p{
+    text-align: center;
+    padding: 2rem;
+}
+.count_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.date_container{
+    margin: 0 0.5rem;
+}
+
+
+/*------------------------------ Party_section-------------------------------------- */
+.party_section{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 30px auto;
+}
+@keyframes explosion {
+    0% {
+        transform: scale(1.1);
+    }
+    20%{
+        transform: scale(1.4);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    60%{
+        transform: scale(1.5);
+    }
+    80%{
+        transform: scale(1.7);
+    }
+    100%{
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+.party_section img{
+    margin: 4rem 0 1rem 0; 
+    width: 80px;
+    animation: explosion 6s infinite;
+}
+.container_h2_party{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+}
+/* Define la animación "slide-up" */
+@keyframes slide-up {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200%);
+    }
+  }
+
+.animate {
+    animation: slide-up 2s .5s forwards;
+ }
+
+.party_section h2{
+    text-align: center;
+    font-family: 'Bruno Ace SC', cursive;
+    font-size: 30px;
+    letter-spacing: 1rem;
+}
+.container_text_party_section{
+    margin-bottom: 80px;
+    text-align: center;
+}
+.party_section p{
+    padding: 0 10px;
+    font-size: 20px;
+}
+.buttons{
+    background: var( --color-primario);
+    color: var(--color-secundario);
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+}
+.buttons:hover {
+    background-color: var(--color-secundario);
+    color: var( --color-primario);
+    border: 3px solid var( --color-primario);
+}
+/*--------------------- Demo pictures section -------------------------------*/
+.demo_pictures {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.demo_pictures img {
+    width:330px;
+    height: auto;   
+    margin: 40px 20px;
+    border-radius: 15px;
+}
+
+@keyframes wakeUpPictures {
+	0% {
+		opacity: 0;
+		transform: rotateX(100deg);
+		transform-origin: bottom;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0);
+		transform-origin: bottom;
+	}
+}
+.animate_pictures {
+    animation: wakeUpPictures 2s ease  1 normal forwards;
+}
+
+/* ---------------------------Asistencia-------------------------------------- */
+
+.attendance_section{
+    background: var( --color-primario);
+    color: var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.attendance_section h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 40px;
+}
+.attendance_section p {
+    font-size: 20px;
+}
+.button_attendance{
+    margin: 60px 10px 40px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    border-radius: 35px;
+    background: var(--color-secundario);
+    color: var( --color-primario);
+    border: none;
+    cursor: pointer;
+}
+.button_attendance:hover {
+    background: var( --color-primario);
+    color: var(--color-secundario);
+    border: 3px solid var(--color-secundario);
+}
+
+/* ----------------------------------Modal---------------------------------------- */
+.modal_container {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,.75); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+.open_modal {
+    display: flex;
+}
+.button_close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: rgba(0,0,0,.75); 
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+@keyframes entranceAnim {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+.form_attendance{
+    position: relative;
+    padding: 1rem;
+    min-width: 320px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 600px;
+    width: 100%;
+    background-color: var( --color-primario);
+    color: var(--color-secundario);
+    border-radius: 20px;
+    overflow-y: auto;
+    animation: entranceAnim 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes exitAnim {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+.exit_anim {
+    animation: exitAnim 1s ease-in-out 0s 1 normal forwards;
+}
+
+.form_attendance h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 40px 0 20px 0;
+    text-align: center;
+}
+.input_container{
+    margin: 40px 0 20px 0;
+    text-align: center;
+}
+.input_container label {
+    display: block;
+    margin: 0 0 10px 10px;
+    font-size: 20px;
+}
+.input_container input {
+    max-width: 25rem;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+}
+.error_input {
+    color: #740808;
+    margin-top: 10px;
+    font-size: 20px;
+    display: none;
+}
+.input_container select {
+    width: 5rem;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    padding-left: 10px;
+    text-align: center;
+}
+.button_input_container {
+     margin: 40px 0 10px 0;
+     text-align: center;
+}
+.button_input_container input[type="submit"]{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    border-radius: 35px;
+    background: var(--color-secundario);
+    color: var( --color-primario);
+    border: none;
+    cursor: pointer;
+}
+
+/*------------------------------- Social Section -------------------------------------- */
+@keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  
+.section_redes{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url("./img/mayur-gala-2PODhmrvLik-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 40px 0;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secundario);
+}
+.section_redes img {
+    -webkit-animation: heartbeat 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite both;
+    animation: heartbeat 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite both;
+    
+}
+.section_redes h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin: 20px 0;
+}
+.section_redes p {
+    font-size: 22px;
+    margin: 10px 10px;
+    text-align: justify;
+}
+.section_redes a {
+    background: var( --color-primario);
+    color: var(--color-secundario);
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+    margin: 30px 0;
+}
+/* ---------------------------------Music-------------------------------------------- */
+@keyframes shake-vertical {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateY(8px);
+    }
+    80% {
+      transform: translateY(6.4px);
+    }
+    90% {
+      transform: translateY(-6.4px);
+    }
+  }
+  
+.music_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+}
+.music_section img {
+    margin: 20px 0; 
+    animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+.music_section h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin: 20px 0;
+}
+.music_section p {
+    font-size: 22px;
+    margin: 10px 0;
+    text-align: center;
+}
+/*----------------- Acordeon------------------- */
+
+.accordion_song{
+    width: 330px;
+}
+.accordion_song .button_accordion {
+    border: none;
+    margin: 20px 0;
+    font-size: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+.accordion_song .button_accordion:hover {
+    background: var(--color-secundario);
+    color: var( --color-primario);
+    border: 3px solid var( --color-primario);
+}
+.accordion_song .show_content_accordion {
+    height: 250px;
+}
+.form_song {
+    padding: 0 20px;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s ease-in-out;
+    
+}
+
+.form_song div {
+    margin-bottom: 15px;
+}
+.form_song div label {
+    display: block;
+    color: var( --color-primario)e;
+    font-weight: 700;
+}
+.form_song div input[type="text"] {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    border: 2px solid var( --color-primario);
+    border-radius: 10px;
+}
+.form_song input[type="submit"] {
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: var(--color-secundario);
+    background: var( --color-primario);
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+/* --------------------------------Present Section ---------------------------------*/
+.present_section{
+    background: var( --color-primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+.present_section img {
+    width: 94px;
+    -webkit-animation: heartbeat 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite both;
+    animation: heartbeat 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite both;
+    margin-bottom: 40px;
+}
+.present_section p {
+    font-size: 22px;
+    margin: 10px 0;
+    color: var(--color-secundario);
+}
+/* -------------------------------Footer---------------------------------------------- */
+  
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+footer p {
+    font-size: 22px;
+    margin: 30px 0;
+    text-align: center;
+}
+footer img{
+    margin: 0 20px;
+}
+
+
+/* --------------------------------Media Query-------------------------------------- */
+@media (max-width: 370px) {
+    .button_attendance{
+        padding: 10px 10px;
+    }
+    .demo_pictures img {
+        margin: 40px 0;
+        width: 100%;
+    }
+    .button_close{
+        right: 1.5rem;
+    }
+    .input_container {
+        text-align: center;
+    }
+    .input_container input {
+        max-width: 300px;
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .counter {
+        font-size: 1rem;
+    }
+}
+    

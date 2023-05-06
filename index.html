@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luli te invita a su fiesta de 15!!!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slideFade.css">
+   
+</head>
+<body>
+    <section id="presentacion" class="fixed">
+        <div class="titulo_container">
+            <h1>Luli</h1>
+            <p>Mis quince años</p>
+        </div>
+        <div class="flecha_container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down-lines arrow-presentacion" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z"></path>
+                <path d="M15 3h-6"></path>
+                <path d="M15 6h-6"></path>
+             </svg>
+        </div>
+    </section>
+
+    <section class="counter">
+        <p>faltan:</p>
+        <div id="count_container" class="count_container"></div>
+    </section>
+
+    <section class="party_section">
+        <img src="./img/icons8-firework-explosion-80.png" alt="fireworks">
+        <div class="container_h2_party">
+            <h2 id="titulo_animado">fiesta</h2>
+        </div>
+        <div class="container_text_party_section">
+            <p>
+                ¡Te espero el Sábado 9 de septiembre de 22:00 a 05:00 hs para festejar este gran momento de mi vida!
+            </p>
+            <p>
+                Salón Campo Norte, Ruta E53, Córdoba.
+            </p>
+            <p>
+                Clickeá en el botón de abajo y encontrá las indicaciones para llegar, ¡nos vemos!
+            </p>
+        </div>
+            <a href="./map.html" target="_blank" class="buttons">como llegar</a>
+    </section>
+
+    <section class="demo_pictures" id="demo_pictures"> 
+        <img src="./img/luli-bg-1.jpg" alt="">
+        <img src="./img/luli -bg-3.jpg" alt="">
+        <img src="./img/luli-bg-4.jpg" alt="">
+     </section>
+
+     <section>
+        <div class="attendance_section">
+            <h2>CONFIRMACION DE ASISTENCIA</h2>
+            <p>Cuento con tu presencia</p>
+            <p>¡Confima tu presencia antes del 01/08 !!!</p>
+            <button class="button_attendance" id="button_attendance">
+                CONFIRMAR ASISTENCIA
+            </button>
+        </div>
+
+        <!-------------------------- Inicio Modal ------------------------------>
+
+        <div class="modal_container" id="modal_container">
+            <form class="form_attendance" id="form_attendance">
+                <button class="button_close" id="button_close_modal">Cerrar</button>
+                <h2>Confirmar asistencia</h2>
+                <div class="input_container">
+                    <label for="name">Nombre</label>   
+                    <input type="text" name="name" id="input_name" placeholder="Ingresa tu nombre">
+                    <p class="error_input" id="error_input">El campo Nombre no puede estar vacio</p>
+                </div>
+                <div class="input_container">
+                    <label for="members">Cuantas personas te acompañan?</label>
+                    <select name="members" id="input_members">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="button_input_container">
+                    <input type="submit" value="Confirmar">
+                </div>
+            </form>
+        </div>
+        <!----------------------- Fin Modal ------------------------------------>
+    </section>
+
+    <section class="section_redes">
+            <img src="./img/icons8-instagram-94.png" alt="instagram logo">
+            <h3>@luli</h3>
+            <p>¡Preparate para esta gran fiesta!</p>
+            <p>Seguime en mi cuenta de Instagram y etiquetame en tus fotos y videos.</p>
+            <p>Podras ver todas las fotos de la fiesta desde mi cuenta!</p>
+            <a href="#" class="buttons">VISITAR MI INSTAGRAM</a>
+    </section>
+
+    <section class="music_section">
+        <img src="./img/icons8-subwoofer-100.png" alt="icono de subwoofer">
+        <h3>¡MUSICA!</h3>
+        <p>Ayudame a elegir juntos los temas que no pueden faltar.</p>
+
+        <div class="accordion_song">
+            <button class="buttons button_accordion" id="button_accordion">SUGERIR CANCION</button>
+            <form class="form_song" id="form_song">
+                <div>
+                    <label for="name">Tu nombre</label>
+                    <input type="text" name="name" placeholder="Tu nombre aqui">
+                </div>
+                <div>
+                    <label for="artist">Artista</label>
+                    <input type="text" name="artista" placeholder="Tu artista favorito aqui">
+                </div>
+                <div>
+                    <label for="song">Cancion</label>
+                    <input type="text" name="song" placeholder="Esa cancion que no paras de bailar aqui">
+                </div>
+                <input type="submit" value="Enviar al DJ!">
+            </form>
+        </div>
+    </section>
+    <section class="present_section">
+        <img src="./img/icons8-gift-94.png" alt="regalo imagen">
+        <p>Si deseás regalarme algo podés colaborar con mis sueños y anhelos</p>
+        <p>En el salón dispondremos de una urna para depositar sobres. ¡Muchas gracias!</p>
+    </section>
+    <footer>
+        <p>¡Gracias por acompañarme en este momento tan importante!</p>
+        <img src="./img/icons8-stars-100.png" alt="estrellas icono">
+    </footer>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
