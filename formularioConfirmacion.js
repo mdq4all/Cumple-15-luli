@@ -1,19 +1,30 @@
 
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import handleSubmit from './handleSubmit.js';
+
+const form = document.querySelector("#form_attendance");
+const endpoint = "invitados";
+
 const formularioConfirmacion = () => {
 
-    const form = document.querySelector("#form_attendance");
-
     form.addEventListener("submit", (e) => {
-        e.preventDefault()
-        const name = e.target.name.value;
-        const memebrs = e.target.members.value;
-        if (name === "") {
+
+        e.preventDefault();
+
+        if (e.target.name.value === "") {
             const errorMessage = document.querySelector("#error_input");
             errorMessage.style.display = "block";
             return;
         }
-        //TODO enviar data
-    })
-
+        const data = {
+             id: uuidv4(),
+             name: e.target.name.value,
+             memebrs: e.target.members.value,
+        }
+        form.classList.add("exit_anim");
+        handleSubmit(data, endpoint);
+    });
+    
+    
 }
 export default formularioConfirmacion;

@@ -21,6 +21,9 @@ observerFunction(animateElement, "animate");
 const animateImg = document.querySelector("#demo_pictures");
 observerFunction(animateImg, "animate_pictures");
 
-modal();
+const btnAttendance = document.querySelector("#button_attendance");
+btnAttendance.addEventListener("click", modal);
+
 formularioConfirmacion();
+
 accordion();
