@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luli te invita a su fiesta de 15!!!</title>
+    <!-- EMail JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('vQWyRvf6pPCUs7mM5')</script>
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
@@ -96,8 +100,11 @@
                         <option value="10">10</option>
                     </select>
                 </div>
+                <div class="input_container">
+                    <textarea name="message" id="message"></textarea>
+                </div>
                 <div class="button_input_container">
-                    <input type="submit" value="Confirmar">
+                    <input type="submit" value="Confirmar" id="button_submit_confirmation">
                 </div>
             </form>
         </div>
@@ -146,6 +153,13 @@
         <p>¡Gracias por acompañarme en este momento tan importante!</p>
         <img src="./img/icons8-stars-100.png" alt="estrellas icono">
     </footer>
+    <!------------------------------- Notification modal -------------------------------------->
+    <div id="notification" class="modal_notification">
+        <div class="container_notification" id="container_notification"></div>
+    </div>
+    <!-- Libreria Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- Programa principal -->
     <script type="module" src="main.js"></script>
 </body>
 

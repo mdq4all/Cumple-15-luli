@@ -6,6 +6,6 @@ export default async function getJSON(endpoint) {
           };
           return await response.json();
     } catch (error) {
-        console.log(error, "hubo un problema");
+        console.log(error, "hubo un problema en Get Json");
     }
   }
