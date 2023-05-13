@@ -3,6 +3,7 @@ import observerFunction from "./observer.js";
 import modal from "./modal.js";
 import formularioConfirmacion from "./formularioConfirmacion.js";
 import accordion from "./accordion.js";
+import formularioCanciones from "./formularioCanciones.js";
 
 
 const countContainer = document.querySelector("#count_container");
@@ -22,5 +23,6 @@ const btnAttendance = document.querySelector("#button_attendance");
 btnAttendance.addEventListener("click", modal);
 
 formularioConfirmacion();
+formularioCanciones();
 
 accordion();

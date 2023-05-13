@@ -323,7 +323,7 @@
 .error_input {
     color: #740808;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 15px;
     opacity: 0;
     transition: all 0.5s ease;
 }
@@ -508,7 +508,7 @@
 }
 .form_song div label {
     display: block;
-    color: var( --color-primario)e;
+    color: var( --color-primario);
     font-weight: 700;
 }
 .form_song div input[type="text"] {
@@ -528,6 +528,13 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.form_song .error_input_song {
+    color: #740808;
+    margin-top: 10px;
+    font-size: 15px;
+    display: none;
+}
+
 /* --------------------------------Present Section ---------------------------------*/
 .present_section{
     background: var( --color-primario);
@@ -581,8 +588,8 @@ footer img{
     left: 0;
 }
 .container_notification{
-    width: 200px;
-    height: 80px;
+    width: 250px;
+    height: 120px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -599,7 +606,7 @@ footer img{
 }
 .container_notification p {
     color: var(--color-secundario);
-    font-size: 20px;
+    font-size: 15px;
     padding: 0 10px;
     text-align: center;
 }

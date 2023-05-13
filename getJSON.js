@@ -1,3 +1,5 @@
+import notification from "./notification.js";
+
 export default async function getJSON(endpoint) {
     try {
         const response = await fetch(`http://localhost:3000/${endpoint}`);
@@ -6,6 +8,6 @@ export default async function getJSON(endpoint) {
           };
           return await response.json();
     } catch (error) {
-        console.log(error, "hubo un problema en Get Json");
+        notification("error", error);
     }
   }

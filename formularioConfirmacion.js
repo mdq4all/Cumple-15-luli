@@ -45,9 +45,7 @@ const formularioConfirmacion = () => {
                              members: event.target.members.value,
                         };   
                 notification("success", "Confirmacion enviada");
-                setTimeout(() => {
-                    addJSON(data, endpoint);
-                }, 4000); 
+                setTimeout(() => addJSON(data, endpoint), 4000); 
                 }, (err) => {
                 btn.value = 'Confirmar';
                 notification("error", "Error - " + err);

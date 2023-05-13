@@ -131,32 +131,42 @@
                 <div>
                     <label for="name">Tu nombre</label>
                     <input type="text" name="name" placeholder="Tu nombre aqui">
+                    <p class="error_input_song" id="error_input_name">Debes ingresar tu nombre</p>
                 </div>
                 <div>
                     <label for="artist">Artista</label>
-                    <input type="text" name="artista" placeholder="Tu artista favorito aqui">
+                    <input type="text" name="artist" placeholder="Tu artista favorito aqui">
                 </div>
                 <div>
                     <label for="song">Cancion</label>
                     <input type="text" name="song" placeholder="Esa cancion que no paras de bailar aqui">
+                    <p class="error_input_song" id="error_input_song">Al menos necesitamos el nombre del tema</p>
                 </div>
-                <input type="submit" value="Enviar al DJ!">
+                <div class="input_container">
+                    <textarea name="message" id="messageSong"></textarea>
+                </div>
+                <input type="submit" id="button_submit_song" value="Enviar al DJ!">
             </form>
         </div>
     </section>
+
     <section class="present_section">
         <img src="./img/icons8-gift-94.png" alt="regalo imagen">
         <p>Si deseás regalarme algo podés colaborar con mis sueños y anhelos</p>
         <p>En el salón dispondremos de una urna para depositar sobres. ¡Muchas gracias!</p>
     </section>
+
     <footer>
         <p>¡Gracias por acompañarme en este momento tan importante!</p>
         <img src="./img/icons8-stars-100.png" alt="estrellas icono">
     </footer>
+
     <!------------------------------- Notification modal -------------------------------------->
     <div id="notification" class="modal_notification">
         <div class="container_notification" id="container_notification"></div>
     </div>
+
+
     <!-- Libreria Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <!-- Programa principal -->
