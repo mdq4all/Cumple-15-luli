@@ -2,7 +2,7 @@ import notification from "./notification.js";
 
 export default async function addJSON (data, endpoint) {
     try {
-        await fetch(`http://localhost:3000/${endpoint}`, {
+        await fetch(`https://cumple-15-luli.vercel.app/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
