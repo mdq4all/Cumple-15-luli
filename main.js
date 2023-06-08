@@ -7,7 +7,7 @@ import formularioCanciones from "./formularioCanciones.js";
 
 
 const countContainer = document.querySelector("#count_container");
-countdown("May 10 2023 12:08:09 GMT-0300", countContainer, "finalFeliz");
+countdown("Aug 19 2023 21:00:00 GMT-0300", countContainer, "Feliz Cumple Lu!!!");
 
 
 //Animacion scrollUp
@@ -26,3 +26,5 @@ formularioConfirmacion();
 formularioCanciones();
 
 accordion();
+
+console.log("version 1.1");

@@ -12,7 +12,7 @@ const formularioConfirmacion = () => {
         
         event.preventDefault();
 
-        const endpoint = "invitados";
+        const endpoint = "guest";
         const btn = document.getElementById('button_submit_confirmation');
         const mailMessage = document.getElementById('message');
         
@@ -53,7 +53,7 @@ const formularioConfirmacion = () => {
             
 
         } catch (error) {
-            notification("error", "Se ha producido un error - intenta mas tarde");
+            notification("error", "Se ha producido un error en get - intenta mas tarde");
         }
 
     });

@@ -2,7 +2,7 @@ import notification from "./notification.js";
 
 export default async function getJSON(endpoint) {
     try {
-        const response = await fetch(`https://cumple-15-luli.vercel.app/${endpoint}`);
+        const response = await fetch(`https://cumple-15-luli.vercel.app/${endpoint}.json`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
           };
