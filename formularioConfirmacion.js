@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 import getJSON from './getJSON.js';
 import addJSON from './addJSON.js';
 import notification from './notification.js';
+import { createMailMessage } from './createMailMessage.js';
 
 const formularioConfirmacion = () => {
     
@@ -14,7 +15,7 @@ const formularioConfirmacion = () => {
 
         const endpoint = "guests";
         const btn = document.getElementById('button_submit_confirmation');
-        const mailMessage = document.getElementById('message');
+        const mailMessage = document.getElementById('message').value;
         
         if (event.target.name.value === "") {
             const emptyName = document.querySelector("#error_input");
@@ -29,12 +30,14 @@ const formularioConfirmacion = () => {
         try {
             const res = await getJSON(endpoint);
             console.log(res)
-            res.map(element => {
-                console.log("mailMessage ", mailMessage.value);
-                mailMessage.value += 
-                `${element.name} ha confirmado con ${element.members} participantes
-                `;
-            });
+            mailMessage = createMailMessage(res);
+            console.log(mailMessage);
+            //res.map(element => {
+                // mailMessage.value += 
+                // `${element.name} ha confirmado con ${element.members} participantes
+                // `;
+            //});
+            console.log("mailMessage ", mailMessage.value);
             const serviceID = 'default_service';
             const templateID = 'service_5dwzphp';
     
