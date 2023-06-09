@@ -12,7 +12,7 @@ const formularioConfirmacion = () => {
         
         event.preventDefault();
 
-        const endpoint = "guest";
+        const endpoint = "guests";
         const btn = document.getElementById('button_submit_confirmation');
         const mailMessage = document.getElementById('message');
         
@@ -28,7 +28,9 @@ const formularioConfirmacion = () => {
 
         try {
             const res = await getJSON(endpoint);
+            console.log(res)
             res.map(element => {
+                console.log("mailMessage ", mailMessage.value);
                 mailMessage.value += 
                 `${element.name} ha confirmado con ${element.members} participantes
                 `;
@@ -43,7 +45,8 @@ const formularioConfirmacion = () => {
                              id: uuidv4(),
                              name: event.target.name.value,
                              members: event.target.members.value,
-                        };   
+                        };  
+                        console.log(data);
                 notification("success", "Confirmacion enviada");
                 setTimeout(() => addJSON(data, endpoint), 4000); 
                 }, (err) => {
