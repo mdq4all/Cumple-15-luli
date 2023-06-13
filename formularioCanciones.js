@@ -1,5 +1,5 @@
-import addJSON from "./addJSON.js";
-import getJSON from "./getJSON.js";
+import { createMailMessageSongs } from "./createMailMessageSongs.js";
+import { addData, readFS } from "./firestore.js";
 import notification from "./notification.js";
 
 const formularioCanciones = () => {
@@ -32,39 +32,41 @@ const formularioCanciones = () => {
                 return;
         }
         if (!event.target.artist.value) event.target.artist.value = "no lo recuerda.";
- 
-        try {
-            const data = await getJSON(endpoint);
-            if (data != []) {
-                data.map(element => {
-                    mailMessage.value += `${element.name} ha sugerido ${element.song} de ${element.artist}
-                                    `;
+
+//-------------------Obtiene la data de firestore y crea el cuerpo del mail-----------------  
+        readFS(endpoint)
+            .then(res => {
+                mailMessage.value = createMailMessageSongs(res);
+                btn.value = 'Enviando...';
+  
+//-----------------------Inicio de servicio de Email JS--------------------------------------
+//-----------------------const por default que provee Email JS-------------------------------  
+                const serviceID = 'default_service';
+                const templateID = 'template_v01ooep';
+
+//----------------------envia el formulario, codigo por default de Email JS-------------------             
+                emailjs.sendForm(serviceID, templateID, this)
+                 .then(() => {
+//------------------------Crea el objeto Data que enviara a firestore-------------------------
+                    const data = {
+                        name: event.target.name.value,
+                        song: event.target.song.value,
+                        artist: event.target.artist.value || "no lo recuerda."
+                    }
+                   btn.value = 'Enviar al DJ!';
+//-----------------------------Envia el objeto a firestore------------------------------------                   
+                   addData(data, endpoint).then (() => {
+                    notification("success", "Cancion enviada");
+                  })
+                  .catch ((error) => {
+                    notification("error", "Error - " + error);
+                  });
                 })
-            } else mailMessage.value = "Aun no han sugerido ningun tema";
-
-            btn.value = 'Enviando...';
-
-            const serviceID = 'default_service';
-            const templateID = 'template_v01ooep';
-         
-            emailjs.sendForm(serviceID, templateID, this)
-             .then(() => {
-                const data = {
-                    name: event.target.name.value,
-                    song: event.target.song.value,
-                    artist: event.target.artist.value || "no lo recuerda."
-                }
-               btn.value = 'Enviar al DJ!';
-               notification("success", "Confirmacion enviada");
-               setTimeout(() => addJSON(data, endpoint), 4000);
-             }, (err) => {
-               btn.value = 'Enviar al DJ!';
-               notification("error", "Error - " + err);
-             });
-
-        } catch (error) {
-            notification("error", error);
-        }
-    });
+                .catch ((err) => {
+                   notification("error", "Error - " + err);
+                 });
+            })
+            .catch(error => {console.log("error read", error)});
+       });
 }
 export default formularioCanciones;

@@ -475,12 +475,14 @@
     margin: 10px 0;
     text-align: center;
 }
-/*----------------- Acordeon------------------- */
+
+/*--------------------------------------- Acordeon --------------------------------------- */
 
 .accordion_song{
     width: 330px;
 }
-.accordion_song .button_accordion {
+.accordion_song 
+.button_accordion {
     border: none;
     margin: 20px 0;
     font-size: 20px;
@@ -493,7 +495,7 @@
     border: 3px solid var( --color-primario);
 }
 .accordion_song .show_content_accordion {
-    height: 250px;
+    height: 300px;
 }
 .form_song {
     padding: 0 20px;
@@ -502,7 +504,6 @@
     transition: height 0.5s ease-in-out;
     
 }
-
 .form_song div {
     margin-bottom: 15px;
 }
@@ -517,8 +518,11 @@
     text-align: center;
     border: 2px solid var( --color-primario);
     border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
 }
-.form_song input[type="submit"] {
+.form_song input[type="submit"], 
+.form_song input[type="submit"]:active {
     margin: 10px auto;
     padding: 10px 20px;
     color: var(--color-secundario);
@@ -535,7 +539,8 @@
     display: none;
 }
 
-/* --------------------------------Present Section ---------------------------------*/
+/* -------------------------------- Present Section ---------------------------------*/
+
 .present_section{
     background: var( --color-primario);
     display: flex;
@@ -554,6 +559,7 @@
     margin: 10px 0;
     color: var(--color-secundario);
 }
+
 /* -------------------------------Footer---------------------------------------------- */
   
 footer {
@@ -572,6 +578,7 @@ footer img{
 }
 
 /*------------------------------- Notification modal --------------------------------------*/
+
 .modal_notification{
     position: fixed;
     z-index: 100;

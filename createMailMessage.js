@@ -5,6 +5,5 @@ export function createMailMessage (res) {
         `${element.name} ha confirmado con ${element.members} participantes
         `;
     });
-    console.log(mailMessage);
     return mailMessage;
 }
