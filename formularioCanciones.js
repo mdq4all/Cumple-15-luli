@@ -56,6 +56,7 @@ const formularioCanciones = () => {
                    btn.value = 'Enviar al DJ!';
 //-----------------------------Envia el objeto a firestore------------------------------------                   
                    addData(data, endpoint).then (() => {
+                    form.reset();
                     notification("success", "Cancion enviada");
                   })
                   .catch ((error) => {

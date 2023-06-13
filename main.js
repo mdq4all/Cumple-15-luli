@@ -24,7 +24,6 @@ btnAttendance.addEventListener("click", modal);
 
 formularioConfirmacion();
 formularioCanciones();
-
 accordion();
 
 console.log("version 1.1.2");
