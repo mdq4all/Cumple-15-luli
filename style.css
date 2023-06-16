@@ -78,6 +78,9 @@
 
 
 /*------------------------------ Party_section-------------------------------------- */
+.salon_span {
+    font-weight: 800;
+}
 .party_section{
     display: flex;  
     flex-direction: column;
