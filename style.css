@@ -406,7 +406,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-secundario);
+    color: #2E3538;
 }
 .section_redes img {
     -webkit-animation: heartbeat 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite both;
